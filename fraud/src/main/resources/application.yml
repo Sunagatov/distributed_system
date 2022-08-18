@@ -4,9 +4,9 @@ spring:
   application:
     name: fraud
   datasource:
-    username: zufarscode
     password: password
     url: jdbc:postgresql://localhost:5432/fraud
+    username: zufarscode
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -15,3 +15,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
