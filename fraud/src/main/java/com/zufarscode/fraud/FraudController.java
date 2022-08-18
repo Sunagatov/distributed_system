@@ -1,6 +1,6 @@
 package com.zufarscode.fraud;
 
-import com.zufarscode.clients.FraudCheckResponse;
+import com.zufarscode.clients.fraud.FraudCheckResponse;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

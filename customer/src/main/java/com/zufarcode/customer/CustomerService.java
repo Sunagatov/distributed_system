@@ -1,7 +1,7 @@
 package com.zufarcode.customer;
 
-import com.zufarscode.clients.FraudCheckResponse;
-import com.zufarscode.clients.FraudClient;
+import com.zufarscode.clients.fraud.FraudCheckResponse;
+import com.zufarscode.clients.fraud.FraudClient;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

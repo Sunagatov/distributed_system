@@ -1,4 +1,4 @@
-package com.zufarscode.clients;
+package com.zufarscode.clients.fraud;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
