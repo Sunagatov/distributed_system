@@ -1,9 +1,16 @@
 package com.zufarcode.customer;
 
+import com.zufarscode.clients.FraudCheckResponse;
+import com.zufarscode.clients.FraudClient;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-public record CustomerService(CustomerRepository customerRepository) {
+@AllArgsConstructor
+public class CustomerService {
+
+    private final CustomerRepository customerRepository;
+    private final FraudClient fraudClient;
 
     public void registerCustomer(CustomerRegistrationRequest request) {
         Customer customer = Customer.builder()
@@ -15,11 +22,11 @@ public record CustomerService(CustomerRepository customerRepository) {
         // todo: check if email not taken
         customerRepository.saveAndFlush(customer);
 
-//        FraudCheckResponse fraudCheckResponse =
-//                fraudClient.isFraudster(customer.getId());
-//
-//        if (fraudCheckResponse.isFraudster()) {
-//            throw new IllegalStateException("fraudster");
-//        }
+        FraudCheckResponse fraudCheckResponse =
+                fraudClient.isFraudster(customer.getId());
+
+        if (fraudCheckResponse.isFraudster()) {
+            throw new IllegalStateException("fraudster");
+        }
     }
 }
