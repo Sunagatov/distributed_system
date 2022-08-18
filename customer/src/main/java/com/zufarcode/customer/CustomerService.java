@@ -11,9 +11,15 @@ public record CustomerService(CustomerRepository customerRepository) {
                 .lastName(request.lastName())
                 .email(request.email())
                 .build();
+        // todo: check if email valid
+        // todo: check if email not taken
+        customerRepository.saveAndFlush(customer);
 
-        //todo check email
-
-        customerRepository.save(customer);
+//        FraudCheckResponse fraudCheckResponse =
+//                fraudClient.isFraudster(customer.getId());
+//
+//        if (fraudCheckResponse.isFraudster()) {
+//            throw new IllegalStateException("fraudster");
+//        }
     }
 }
