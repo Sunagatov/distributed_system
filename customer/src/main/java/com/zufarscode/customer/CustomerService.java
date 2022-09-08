@@ -1,4 +1,4 @@
-package com.zufarcode.customer;
+package com.zufarscode.customer;
 
 import com.zufarscode.clients.fraud.FraudCheckResponse;
 import com.zufarscode.clients.fraud.FraudClient;

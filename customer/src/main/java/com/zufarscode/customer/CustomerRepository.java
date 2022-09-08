@@ -1,4 +1,4 @@
-package com.zufarcode.customer;
+package com.zufarscode.customer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

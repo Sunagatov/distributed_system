@@ -1,4 +1,4 @@
-package com.zufarcode.customer;
+package com.zufarscode.customer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
