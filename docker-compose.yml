@@ -1,4 +1,5 @@
 services:
+
   postgres:
     container_name: postgres
     image: postgres
@@ -13,6 +14,7 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4
@@ -27,6 +29,7 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
@@ -34,6 +37,7 @@ services:
       - "9411:9411"
     networks:
       - spring
+      -
   rabbitmq:
     image: rabbitmq:3.9.11-management-alpine
     container_name: rabbitmq
@@ -42,7 +46,6 @@ services:
       - "15672:15672"
     networks:
       - spring
-
 
 networks:
   postgres:
